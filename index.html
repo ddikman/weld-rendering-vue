@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Hosted vue libraries-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/x-template" id="page-contents">
+      <div>
+        Yay!
+        We have {{ definitions.widgets.length }} items to render.
+      </div>
+    </script>
+    <script type="module">
+      import definitions from './definition.js'
+
+      var app = new Vue({
+        el: '#app',
+        template: '#page-contents',
+        data: function() {
+          return {
+            definitions
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
