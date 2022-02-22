@@ -5,10 +5,6 @@ body {
   --base-padding: 8px;
 }
 
-.container {
-  max-width: 407px;
-}
-
 .rounding {
   border-radius: var(--rounding);
 }
@@ -19,6 +15,9 @@ body {
 
 .container {
   overflow-y: scroll;
+  max-width: 407px;
+  /** I haven't figured out why but in chrome simulator I need this to scroll to bottom **/
+  padding-bottom: 300px;
 }
 
 .container .widget:not(:last-child) {
