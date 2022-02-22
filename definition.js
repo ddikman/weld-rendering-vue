@@ -9,6 +9,11 @@ export default {
       }
     },
     {
+      "type": "not_yet_unsupported",
+      "title": "Example of unsupported widget",
+      "data": {}
+    },
+    {
       "type": "local_recent_items",
       "title": "recent items",
       "data": {}
@@ -115,6 +120,26 @@ export default {
       "data": {
         "image_id": "b6dabed9-5330-499d-b90d-f15bc820a26c",
         "target": "page=shop&shop_id=8e349736-2503-4c40-94e9-5441502584d4&title=417EDIFICE"
+      }
+    },
+    {
+      "type": "article_list",
+      "title": "WHAT’S HOT 🔥🔥🔥",
+      "data": {
+        "items": [
+          {
+            "image_url": "https://cdn.media.facy.jp/article-media/2021/12/03155345/2021sneaker-links-3.jpg",
+            "url": "https://facy.jp/article/men/feature/2021-sneakers-links/",
+            "title": "今年よく履いたスニーカーを教えてください！｜#2 LINKS 半田亮",
+            "excerpt": "今年も残すところ、あと1ヶ月。そろそろ一年を振り返る時期です。「人の趣向やスタイルは足元に出やすい！」ということで、今年もFACYに馴染みのあるショップスタッフさんに今年よく履いたスニーカーを教えてもらいました！"
+          },
+          {
+            "image_url": "https://cdn.media.facy.jp/article-media/2021/12/03155345/2021sneaker-links-3.jpg",
+            "url": "https://facy.jp/article/men/news/totonoimashina-sugiyama-inoubrothers-ribhat/",
+            "title": "初買いのニット帽は〈イノウエブラザーズ〉のリブハットでした。 #ととのいま品",
+            "excerpt": "手頃な値段ゆえ、個人的につい買いがちなのがアクリル素材のニットキャップ。特に色物は着こなしのアクセントにしやすいので、いい色味のものを見かけると即レジに直行してしまう癖があります。"
+          }
+        ]
       }
     },
     {

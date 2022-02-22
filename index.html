@@ -2,28 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
     <!-- Hosted vue libraries-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div id="app"></div>
     <script type="text/x-template" id="page-contents">
-      <div>
-        Yay!
-        We have {{ definitions.widgets.length }} items to render.
+      <div class="container">
+        <component v-for="(widget, index) in definitions.widgets" :key="index" v-if="canHandle(widget.type)" v-bind:is="widget.type" v-bind:title="widget.title" v-bind:config="widget.data"></component>
       </div>
     </script>
     <script type="module">
       import definitions from './definition.js'
+      import Banner from './widgets/banner.js'
+      import ArticleList from './widgets/article_list.js'
+      import ItemList from './widgets/item_list.js'
+      import LocalRecent from './widgets/local_recent.js'
+      import ShopList from './widgets/shop_list.js'
 
       var app = new Vue({
         el: '#app',
         template: '#page-contents',
+        components: {
+          'banner': Banner,
+          'article_list': ArticleList,
+          'item_list': ItemList,
+          'local_recent_items': LocalRecent,
+          'shop_list': ShopList
+        },
         data: function() {
           return {
             definitions
+          }
+        },
+        computed: {
+          widgets: () => {
+            return this.definitions.widgets
+          }
+        },
+        methods: {
+          canHandle: function (widgetType) {
+            const registered = this.$options.components[widgetType] !== undefined
+            if (!registered) {
+              console.log(`cannot handle ${widgetType}, skipping..`)
+            }
+            return registered
           }
         }
       })
