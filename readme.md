@@ -15,6 +15,9 @@ This is how the rendered version looks in chrome simulator:
 
 ![screenshot](example.gif)
 
+Check the actual running rendering here:
+https://ddikman.github.io/weld-rendering-vue/
+
 ## General setup
 
 The `index.html` spins app a tiny Vue app. The logic happens in two places.
